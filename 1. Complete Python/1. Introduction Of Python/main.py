@@ -17,6 +17,7 @@ Python is interpreted, but internally it compiles code to bytecode (.pyc files),
 
 
 
+
 '''
 ✅ Introduction
 Python ek high-level, interpreted, aur general-purpose programming language hai. Iska syntax simple aur readable hai. Yeh use hoti hai web development, AI, data science, automation, aur scripting mein.
