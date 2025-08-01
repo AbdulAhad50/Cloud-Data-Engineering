@@ -1,0 +1,31 @@
+import pandas as pd
+
+Example
+ 
+Find Column & Filteration Row
+ 
+
+
+
+1- square brackets
+2- Boolean Condition
+
+
+Selecting Column
+1- a series
+2- dataframe multiple colunms of data
+
+
+column = df['column name']
+multiple_column = df['column name 1', 'column name 2', 'column name 3', '...]
+
+
+Filterations rows
+boolean indexing
+
+based on a single Condition
+filtered_row = df[df['salary'] > 50000]
+
+
+Combine multiple Condition
+filtered_Rows = df[(df['column name'] > 50000) & (df['column name'] < 80000)]
