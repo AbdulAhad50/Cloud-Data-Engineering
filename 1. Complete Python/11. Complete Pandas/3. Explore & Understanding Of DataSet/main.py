@@ -21,3 +21,4 @@ dt = pd.DataFrame(data)
 dt.to_excel('example.xlsx', index=False)
 print(dt)
 print(dt.info())
+

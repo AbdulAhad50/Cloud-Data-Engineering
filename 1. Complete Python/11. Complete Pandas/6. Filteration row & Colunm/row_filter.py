@@ -9,4 +9,6 @@ data = {
 
 df = pd.DataFrame(data)
 
-
+salary = df[(df['Salary'] < 50000) | (df['Age'] < 30)]
+print(salary)
+ 

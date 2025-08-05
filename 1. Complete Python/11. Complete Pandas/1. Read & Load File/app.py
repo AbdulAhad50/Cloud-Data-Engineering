@@ -61,6 +61,7 @@ print(df_xlsx)
 #! How to Read Json file
 
 
+
 print('\n\nRead Json File')
 
 df_json = pd.read_json(r'C:\Users\Administrator\Desktop\Cloud Data Engineering\1. Complete Python\11. Complete Pandas\sample_Data.json') # ✅
