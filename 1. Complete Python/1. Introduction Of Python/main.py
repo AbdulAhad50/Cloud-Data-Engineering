@@ -34,3 +34,18 @@ Algorithm: Steps ka sequence jo kisi maslay ka solution deta hai.
 Programming Language: Medium jisse hum computer se baat karte hain (e.g., Python).
 
 Compiler vs Interpreter: Compiler pura code ek baar mein convert karta hai. Interpreter line by line.'''
+
+
+# print('Hello World')
+
+# print('Hello world')
+print('Muhammad Usman')
+
+
+# int 
+# float
+# str 
+# bool
+
+
+integer_value = 6
