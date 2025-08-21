@@ -28,9 +28,9 @@
 --------------------------------------------------------------------------------------------------------
 
 
---Examples
---1) SELECT DISTINCT with one column
---Tum sales.customers table me se sab cities lena chahte ho:
+-- Examples
+-- 1) SELECT DISTINCT with one column
+-- Tum sales.customers table me se sab cities lena chahte ho:
 
 
 SELECT city
@@ -82,7 +82,7 @@ FROM sales.customers;
 
 --DISTINCT tab use hota hai jab sirf unique rows chahiye.
 
---ROUP BY tab use hota hai jab aggregate functions (COUNT, SUM, etc.) bhi lagane hain.
+--GROUP BY tab use hota hai jab aggregate functions (COUNT, SUM, etc.) bhi lagane hain.
 
 --Summary
 --SELECT DISTINCT ek ya zyada columns me se duplicate remove karta hai.
@@ -91,3 +91,10 @@ FROM sales.customers;
 
 --GROUP BY aggregation ke liye use hota hai, DISTINCT simple uniqueness ke liye.
 
+--!Question (Scenario-Based)
+
+--? 👉 Tumhe sales.customers table se un states ki list chahiye jahan par multiple cities ho.
+--? ⚠️ Dhyan rahe: States unique hone chahiye (duplicate states na aaye).
+
+
+SELECT DISTINCT state, city FROM sales.customers
