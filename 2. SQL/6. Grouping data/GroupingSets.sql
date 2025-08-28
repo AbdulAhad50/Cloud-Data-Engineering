@@ -51,3 +51,70 @@ GROUP BY brand, category;
 --Yeh (brand, category) grouping set ka example hai.
 
 
+
+
+SELECT brand, category, SUM(sales)
+FROM sales.sales_summary
+GROUP BY brand, category
+
+UNION ALL
+
+SELECT brand, NULL, SUM(sales)
+FROM sales.sales_summary
+GROUP BY brand
+
+UNION ALL
+
+SELECT NULL, category, SUM(sales)
+FROM sales.sales_summary
+GROUP BY category
+
+UNION ALL
+
+SELECT NULL, NULL, SUM(sales)
+FROM sales.sales_summary;
+
+
+
+
+SELECT
+    brand,
+    category,
+    SUM(sales) as total_sales
+FROM sales.sales_summary
+GROUP BY GROUPING SETS (
+    (brand, category),  -- brand aur category dono
+    (brand),            -- sirf brand
+    (category),         -- sirf category
+    ()                  -- grand total
+)
+ORDER BY brand, category;
+
+
+
+
+-- 🔥 Ab tumhare liye tricky practice question
+
+-- sales.sales_summary table me se ek query likho jo:
+
+-- Brand aur Category level par sales dikhaye
+
+-- Sirf Brand level par total dikhaye
+
+-- Sirf Category level par total dikhaye
+
+-- Grand total bhi dikhaye
+
+-- Aur ek column ho level_type jisme likha ho:
+
+-- "Brand+Category"
+
+-- "Brand Total"
+
+-- "Category Total"
+
+-- "Grand Total"
+
+-- 👉 Yeh CASE WHEN + GROUPING() ke sath solve hoga.
+
+-- Kya tum chahte ho main iska skeleton query likh kar du ya tum khud try karoge pehle?
