@@ -1,0 +1,525 @@
+yei mera new template design hai dashboard k liye
+
+new template code
+
+import React from 'react'
+import { FaFilterCircleXmark } from "react-icons/fa6";
+import { FiRefreshCw } from "react-icons/fi";
+
+
+
+const page = () => {
+  return (
+    <div className='flex flex-col gap-2 h-[100vh] p-[10px] pb-[15px]'>
+
+          <div className='flex gap-2'>
+                <div className='w-[150px] flex justify-center items-center h-[100px] bg-blue-600 rounded-[10px]'>
+                    <h1 className='text-[25px]'>Verdana</h1>
+                </div>
+
+                <div className='w-[100%] h-[100px] flex items-center justify-between px-[15px] bg-blue-600 rounded-[10px]'>
+                      <h2 className='text-[25px] font-bold'>Sales Dashboard</h2>
+                      <button><FiRefreshCw className='text-[25px] mr-[20px]'/></button>
+                </div>
+          </div>
+
+          <div className=' w-full h-[100vh] rounded-[10px] flex gap-2'>
+              <div className='w-[150px] h-full bg-blue-700 rounded-[10px] px-[15px] pt-[20px] pb-[20px] flex flex-col gap-4'>
+
+
+                    <div className='flex flex-col gap-2'>
+                        <div className='flex justify-between items-center'>
+                            <h2 className='text-white font-bold'>Category</h2>
+                            {/* filter resest button */}
+                            <button><FaFilterCircleXmark/></button>
+                        </div>
+
+                        {/* filters button */}
+                        <div className='flex flex-col gap-1 text-white'>
+                            <button className='bg-blue-950 w-full h-[30px] outline-none outline-slate-100]'>Furniture</button>
+                            <button className='bg-blue-950 w-full h-[30px] outline-none outline-slate-100]'>Chair</button>
+                            <button className='bg-blue-950 w-full h-[30px] outline-none outline-slate-100]'>Tables</button>
+                        </div>
+                    </div>
+
+                    <div className='flex flex-col gap-2'>
+                        <div className='flex justify-between items-center'>
+                            <h2 className='text-white font-bold'>Year</h2>
+                            {/* filter resest button */}
+                            <button><FaFilterCircleXmark/></button>
+                        </div>
+
+                        {/* filters button */}
+                        <div className='flex flex-col gap-1 text-white'>
+                            <button className='bg-blue-950 w-full h-[30px] outline-none outline-slate-100]'>2021</button>
+                            <button className='bg-blue-950 w-full h-[30px] outline-none outline-slate-100]'>2022</button>
+                            <button className='bg-blue-950 w-full h-[30px] outline-none outline-slate-100]'>2023</button>
+                            <button className='bg-blue-950 w-full h-[30px] outline-none outline-slate-100]'>2024</button>
+                        </div>
+                    </div>
+
+
+                    {/* // if filters option length greater than 5  */}
+
+                    <div className='flex flex-col gap-2'>
+                        <div className='flex justify-between items-center'>
+                            <h2 className='text-white font-bold'>Month</h2>
+                            {/* filter resest button */}
+                            <button><FaFilterCircleXmark/></button>
+                        </div>
+
+                        {/* filters button */}
+                        <div className='grid grid-cols-2 gap-1 text-white'>
+                            <button className='bg-blue-950 w-full h-[30px] outline-none outline-slate-100]'>Jan</button>
+                            <button className='bg-blue-950 w-full h-[30px] outline-none outline-slate-100]'>Feb</button>
+                            <button className='bg-blue-950 w-full h-[30px] outline-none outline-slate-100]'>Mar</button>
+                            <button className='bg-blue-950 w-full h-[30px] outline-none outline-slate-100]'>Apr</button>
+                            <button className='bg-blue-950 w-full h-[30px] outline-none outline-slate-100]'>May</button>
+                            <button className='bg-blue-950 w-full h-[30px] outline-none outline-slate-100]'>June</button>
+                            <button className='bg-blue-950 w-full h-[30px] outline-none outline-slate-100]'>July</button>
+                            <button className='bg-blue-950 w-full h-[30px] outline-none outline-slate-100]'>Aug</button>
+                            <button className='bg-blue-950 w-full h-[30px] outline-none outline-slate-100]'>Sep</button>
+                            <button className='bg-blue-950 w-full h-[30px] outline-none outline-slate-100]'>Oct</button>
+                            <button className='bg-blue-950 w-full h-[30px] outline-none outline-slate-100]'>Nov</button>
+                            <button className='bg-blue-950 w-full h-[30px] outline-none outline-slate-100]'>Dec</button>
+                        </div>
+                    </div>
+              </div>
+
+              <div className='w-[100%] h-full  rounded-[10px] flex gap-2'>
+                    <div className='w-[100%] h-full flex flex-col gap-2'>
+                          <div className='w-[100%] h-[150px] flex gap-2'>
+                                <div className='bg-black w-full h-[100px] rounded-[10px]'>
+                                      
+                                </div>
+                                <div className='bg-black w-full h-[100px] rounded-[10px]'>
+                                      
+                                </div>
+                          </div>
+
+                          <div className='w-full h-full bg-black rounded-[10px]'>
+                                {/* show Bar charts here */}
+                          </div>
+
+                          <div className='w-full h-full bg-black rounded-[10px]'>
+                                {/* show Horizontal charts here */}
+                          </div>
+
+
+                    </div>
+
+                    <div className='w-[100%] h-full bg-blue-200 flex gap-2'>
+                        <div className='w-full flex h-full bg-black'>
+                                {/* show Horizontal bar charts here */}
+                        </div>
+
+                        <div className='w-full flex flex-col gap-2'>
+                            <div className='w-full h-full bg-black'>
+                                    {/* show Pie charts here */}
+                            </div>
+
+                            <div className='w-full h-full bg-black'>
+                                    {/* show Pie charts here */}
+                            </div>
+                        </div>
+                    </div>
+              </div>
+          </div>
+    </div>
+  )
+}
+
+export default page
+
+
+old template code
+
+"use client";
+import Image from "next/image";
+import React, { useMemo, useState } from "react";
+import {
+  PieChart, Pie, Cell, BarChart, Bar, LineChart, Line,
+  XAxis, YAxis, Tooltip, Legend, CartesianGrid,
+  RadarChart, Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis,
+  ScatterChart, Scatter, Treemap,
+  FunnelChart, Funnel, LabelList, ComposedChart, Area
+} from "recharts";
+import { RadialBarChart, RadialBar, ResponsiveContainer } from "recharts";
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+
+type YKey = string | string[];
+
+interface ChartConfig {
+  chart: string;
+  x?: string;
+  y?: YKey;
+  insight?: string;
+  groupBy?: string;
+  value?: string;
+}
+
+interface Props {
+  parsedData: any[];
+  charts: ChartConfig[];
+  filterColumns: string[];
+}
+
+const COLORS = ["#8884d8", "#82ca9d", "#ffc658", "#ff8042", "#0088FE", "#FFBB28"];
+
+const normalize = (v: any) => {
+  if (v === null || v === undefined) return "";
+  if (typeof v === "number") return String(v);
+  return String(v).trim().toLowerCase();
+};
+
+const equalsLoose = (a: any, b: any) => normalize(a) === normalize(b);
+
+const groupAndSum = (rows: any[], groupKey: string, sumKey: string) => {
+  const map: Record<string, number> = {};
+  rows.forEach((r) => {
+    const g = r[groupKey];
+    const val = parseFloat(r[sumKey]) || 0;
+    if (g !== undefined) map[g] = (map[g] || 0) + val;
+  });
+  return Object.entries(map).map(([k, v]) => ({ [groupKey]: k, [sumKey]: v }));
+};
+
+const Template = ({ parsedData, charts, filterColumns }: Props) => {
+  const [filters, setFilters] = useState<{ [key: string]: string | null }>({});
+  const [chartList, setChartList] = useState<ChartConfig[]>(charts);
+  const [activeFilters, setActiveFilters] = useState<string[]>(filterColumns); // ✅ new state
+
+  const filteredData = useMemo(() => {
+    let rows = [...parsedData];
+    Object.entries(filters).forEach(([col, val]) => {
+      if (val) rows = rows.filter((r) => equalsLoose(r[col], val));
+    });
+    return rows;
+  }, [filters, parsedData]);
+
+
+  
+
+  const uniqueValuesByColumn = useMemo(() => {
+    const map: Record<string, any[]> = {};
+    filterColumns.forEach((col) => {
+      const vals = Array.from(
+        new Set(
+          parsedData
+            .map((r) => r?.[col])
+            .filter((v) => v !== undefined && v !== null)
+        )
+      );
+      map[col] = vals;
+    });
+    return map;
+  }, [parsedData, filterColumns]);
+
+  const resetFilters = () => setFilters({});
+
+
+  const removeFilterCategory = (col: string) => {
+    setActiveFilters((prev) => prev.filter((c) => c !== col));
+    setFilters((prev) => {
+      const newFilters = { ...prev };
+      delete newFilters[col];
+      return newFilters;
+    });
+  };
+
+  const removeChart = (index: number) => {
+    setChartList((prev) => prev.filter((_, i) => i !== index));
+  };
+
+  const handleDragEnd = (result: any) => {
+    if (!result.destination) return;
+    const items = Array.from(chartList);
+    const [reordered] = items.splice(result.source.index, 1);
+    items.splice(result.destination.index, 0, reordered);
+    setChartList(items);
+  };
+
+  const buildChartData = (chart: ChartConfig) => {
+    if (!filteredData.length) return [];
+    if (chart.chart === "Bar Chart" && chart.x && chart.y) {
+      return groupAndSum(filteredData, chart.x, chart.y as string);
+    }
+    if (chart.chart === "Line Chart" && chart.x && chart.y) {
+      return groupAndSum(filteredData, chart.x, chart.y as string);
+    }
+    if (chart.chart === "Pie Chart" && chart.groupBy && chart.value) {
+      return groupAndSum(filteredData, chart.groupBy, chart.value);
+    }
+    if (chart.chart === "Radar Chart" && chart.x && chart.y) {
+      return groupAndSum(filteredData, chart.x, chart.y as string);
+    }
+    if (chart.chart === "Scatter Chart" && chart.x && chart.y) {
+      return filteredData.map((row) => ({
+        [chart.x!]: parseFloat(row[chart.x!]) || 0,
+        [chart.y as string]: parseFloat(row[chart.y as string]) || 0,
+      }));
+    }
+    if (chart.chart === "Treemap" && chart.groupBy && chart.value) {
+      return groupAndSum(filteredData, chart.groupBy, chart.value).map((d) => ({
+        name: d[chart.groupBy!],
+        size: d[chart.value!],
+      }));
+    }
+    if (chart.chart === "Radial Bar Chart" && chart.groupBy && chart.value) {
+      return groupAndSum(filteredData, chart.groupBy, chart.value).map((d) => ({
+        name: d[chart.groupBy!],
+        value: d[chart.value!],
+      }));
+    }
+    if (chart.chart === "Funnel Chart" && chart.groupBy && chart.value) {
+      return groupAndSum(filteredData, chart.groupBy, chart.value).map((d) => ({
+        name: d[chart.groupBy!],
+        value: d[chart.value!],
+      }));
+    }
+    if (chart.chart === "Composed Chart" && chart.x && chart.y) {
+      const y = chart.y as string[] | string;
+      const yArr = Array.isArray(y) ? y : [y];
+      return filteredData.map((row) => {
+        const obj: any = { [chart.x!]: row[chart.x!] };
+        yArr.forEach((yy) => (obj[yy] = parseFloat(row[yy]) || 0));
+        return obj;
+      });
+    }
+    return filteredData;
+  };
+
+  const renderChart = (chart: ChartConfig) => {
+    const chartData = buildChartData(chart);
+    const empty = !chartData || chartData.length === 0;
+    const EmptyState = (
+      <div className="w-full h-full flex items-center justify-center text-sm text-gray-400">
+        No matching data
+      </div>
+    );
+
+    if (chart.chart === "Bar Chart" && chart.x && chart.y) {
+      return empty ? EmptyState : (
+        <BarChart data={chartData}>
+          <XAxis dataKey={chart.x} />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Bar dataKey={chart.y as string} fill="#8884d8" />
+        </BarChart>
+      );
+    }
+    if (chart.chart === "Line Chart" && chart.x && chart.y) {
+      return empty ? EmptyState : (
+        <LineChart data={chartData}>
+          <XAxis dataKey={chart.x} />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <CartesianGrid stroke="#ccc" />
+          <Line type="monotone" dataKey={chart.y as string} stroke="#82ca9d" />
+        </LineChart>
+      );
+    }
+    if (chart.chart === "Pie Chart" && chart.groupBy && chart.value) {
+      return empty ? EmptyState : (
+        <PieChart>
+          <Pie data={chartData} dataKey={chart.value} nameKey={chart.groupBy} cx="50%" cy="50%" outerRadius={80} label>
+            {chartData.map((_: any, i: number) => (
+              <Cell key={i} fill={COLORS[i % COLORS.length]} />
+            ))}
+          </Pie>
+          <Tooltip />
+        </PieChart>
+      );
+    }
+    if (chart.chart === "Radar Chart" && chart.x && chart.y) {
+      return empty ? EmptyState : (
+        <RadarChart cx="50%" cy="50%" outerRadius="80%" data={chartData}>
+          <PolarGrid />
+          <PolarAngleAxis dataKey={chart.x} />
+          <PolarRadiusAxis />
+          <Radar name={String(chart.y)} dataKey={chart.y as string} stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+        </RadarChart>
+      );
+    }
+    if (chart.chart === "Scatter Chart" && chart.x && chart.y) {
+      return empty ? EmptyState : (
+        <ScatterChart>
+          <CartesianGrid />
+          <XAxis dataKey={chart.x} />
+          <YAxis dataKey={chart.y as string} />
+          <Tooltip />
+          <Legend />
+          <Scatter data={chartData} fill="#8884d8" />
+        </ScatterChart>
+      );
+    }
+    if (chart.chart === "Treemap" && chart.groupBy && chart.value) {
+      return empty ? EmptyState : (
+        <Treemap data={chartData} dataKey="size" nameKey="name" stroke="#fff" fill="#8884d8" />
+      );
+    }
+    if (chart.chart === "Radial Bar Chart" && chart.groupBy && chart.value) {
+      return empty ? EmptyState : (
+        <RadialBarChart cx="50%" cy="50%" innerRadius="10%" outerRadius="80%" barSize={10} data={chartData}>
+          <RadialBar minAngle={15} background clockWise dataKey="value" />
+          <Legend />
+        </RadialBarChart>
+      );
+    }
+    if (chart.chart === "Funnel Chart" && chart.groupBy && chart.value) {
+      return empty ? EmptyState : (
+        <FunnelChart>
+          <Tooltip />
+          <Funnel dataKey="value" data={chartData} isAnimationActive>
+            <LabelList position="right" fill="#000" stroke="none" dataKey="name" />
+          </Funnel>
+        </FunnelChart>
+      );
+    }
+    if (chart.chart === "Composed Chart" && chart.x && chart.y) {
+      const y = chart.y as string[] | string;
+      const yArr = Array.isArray(y) ? y : [y];
+      return empty ? EmptyState : (
+        <ComposedChart data={chartData}>
+          <XAxis dataKey={chart.x} />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <CartesianGrid stroke="#f5f5f5" />
+          {yArr[0] && (
+            <>
+              <Area type="monotone" dataKey={yArr[0]} fill="#8884d8" stroke="#8884d8" />
+              <Bar dataKey={yArr[0]} barSize={20} fill="#413ea0" />
+            </>
+          )}
+          {yArr[1] && <Line type="monotone" dataKey={yArr[1]} stroke="#ff7300" />}
+        </ComposedChart>
+      );
+    }
+    return <div className="flex items-center justify-center text-gray-400">Unsupported chart</div>;
+  };
+
+  return (
+    <div className="p-[40px] h-full">
+      <div className="flex gap-4 w-full rounded-xl mb-5">
+        <div className="w-[15%] flex flex-col p-4 items-center gap-6 text-white bg-black rounded-xl">
+  <Image src="/logo.png" alt="Logo" width={100} height={100} className="rounded-full" />
+  
+  {activeFilters.map((col) => {   // ✅ filterColumns → activeFilters
+    const vals = uniqueValuesByColumn[col] || [];
+    if (vals.length === 0) return null;
+    return (
+      <div key={col} className="w-full flex flex-col gap-2 items-center relative">
+        <h1 className="w-[80%] h-[30px] bg-white text-black text-center flex items-center justify-center">
+          {col}
+        </h1>
+        {/* ✅ remove button */}
+        <button
+          onClick={() => removeFilterCategory(col)}
+          className="absolute top-0 right-0 bg-red-500 text-white px-1 rounded text-xs"
+        >
+          ✕
+        </button>
+
+        {vals.map((val: any) => (
+          <button
+            key={String(val)}
+            className={`w-[80%] h-[30px] ${
+              equalsLoose(filters[col], val) ? "bg-blue-500 text-white" : "bg-slate-500"
+            }`}
+            onClick={() =>
+              setFilters((prev) => ({
+                ...prev,
+                [col]: equalsLoose(prev[col], val) ? null : String(val),
+              }))
+            }
+          >
+            {String(val)}
+          </button>
+        ))}
+      </div>
+    );
+  })}
+
+  {Object.values(filters).some(Boolean) && (
+    <button onClick={resetFilters} className="w-[80%] h-[30px] bg-red-500 text-white mt-4">
+      Reset
+    </button>
+  )}
+</div>
+
+
+        <div className="w-[85%] flex flex-col bg-slate-700 rounded-xl">
+          <div className="flex justify-between items-center px-6 bg-black w-full rounded-xl">
+            <h1 className="text-[40px] text-white font-bold">Dynamic Dashboard</h1>
+          </div>
+          <DragDropContext onDragEnd={handleDragEnd}>
+            <Droppable droppableId="charts" direction="vertical">
+              {(provided) => (
+                <div ref={provided.innerRef} {...provided.droppableProps} className="flex flex-col gap-4 p-4">
+                  {chartList.slice(0, 2).map((chart, i) => (
+                    <Draggable key={i.toString()} draggableId={i.toString()} index={i}>
+                      {(provided) => (
+                        <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps} className="w-full bg-white h-[400px] rounded-[10px] relative p-4">
+                          <button onClick={() => removeChart(i)} className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded">✕</button>
+                          <ResponsiveContainer width="100%" height="100%">
+                            {renderChart(chart)}
+                          </ResponsiveContainer>
+                        </div>
+                      )}
+                    </Draggable>
+                  ))}
+                  <div className="flex gap-2">
+                    {chartList.slice(2, 5).map((chart, idx) => {
+                      const i = idx + 2;
+                      return (
+                        <Draggable key={i.toString()} draggableId={i.toString()} index={i}>
+                          {(provided) => (
+                            <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps} className="w-[33.3%] bg-black h-[255px] rounded-[10px] relative p-4">
+                              <button onClick={() => removeChart(i)} className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded">✕</button>
+                              <ResponsiveContainer width="100%" height="100%">
+                                {renderChart(chart)}
+                              </ResponsiveContainer>
+                            </div>
+                          )}
+                        </Draggable>
+                      );
+                    })}
+                  </div>
+                  <div className="grid grid-cols-2 gap-4">
+                    {chartList.slice(5).map((chart, idx) => {
+                      const i = idx + 5;
+                      return (
+                        <Draggable key={i.toString()} draggableId={i.toString()} index={i}>
+                          {(provided) => (
+                            <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps} className="bg-white h-[300px] rounded-[10px] relative p-4">
+                              <button onClick={() => removeChart(i)} className="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded">✕</button>
+                              <ResponsiveContainer width="100%" height="100%">
+                                {renderChart(chart)}
+                              </ResponsiveContainer>
+                            </div>
+                          )}
+                        </Draggable>
+                      );
+                    })}
+                  </div>
+                  {provided.placeholder}
+                </div>
+              )}
+            </Droppable>
+          </DragDropContext>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Template;
+
+
+
+mein chata hon jis tarike se meray old template mein charts render or filters lag rahay thay same wese hi is new template mein bhi ho leking meray new template ka design change mat karna bas chart render ho or filters bhi apply ho is new template mein bhi
+
+
