@@ -36,7 +36,7 @@
 SELECT city
 FROM sales.customers
 ORDER BY city;
---Isme duplicate cities aa sakti hain.
+-- Isme duplicate cities aa sakti hain.
 
 -- Duplicate remove karne ke liye:
 

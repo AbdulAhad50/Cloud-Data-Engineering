@@ -1,4 +1,4 @@
--- SQL Server BETWEEN Operator – Summary
+--! SQL Server BETWEEN Operator – Summary
 -- Syntax:
 -- column BETWEEN start_value AND end_value
 

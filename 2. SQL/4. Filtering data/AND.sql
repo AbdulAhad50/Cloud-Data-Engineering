@@ -12,9 +12,9 @@
 
 -- Example: mujhe customers chahiye jo California ke hain aur city = 'San Diego' hai.
 
--- SELECT * 
--- FROM sales.customers
--- WHERE state = 'CA' AND city = 'San Diego';
+SELECT * 
+FROM sales.customers
+WHERE state = 'CA' AND city = 'San Diego';
 
 
 -- Ye query sirf wahi rows degi jisme dono conditions TRUE hain.

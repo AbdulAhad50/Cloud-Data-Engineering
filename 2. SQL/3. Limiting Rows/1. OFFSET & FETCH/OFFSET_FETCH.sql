@@ -1,6 +1,6 @@
 --! 📘 Roman Urdu Explanation: SQL Server OFFSET FETCH
 --? 🔹 OFFSET FETCH ka Introduction
---? SQL Server mein OFFSET aur FETCH clauses ka use hum query ke result set ko limit karne ke liye karte hain — yani sirf kuch specific rows hi fetch karni ho.
+--? SQL Server mein OFFSET aur FETCH clauses ka use hum query ke result set ko limit karne ke liye use karte hain — yani sirf kuch specific rows hi fetch karni ho.
 
 --? Ye dono ORDER BY clause ke andar hi use hote hain. Agar ORDER BY nahi likha hoga, to error milta hai.
 

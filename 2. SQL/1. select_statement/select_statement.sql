@@ -42,7 +42,7 @@ SELECT * FROM sales.customers;
 
 -- Extra data transfer hoga
 
--- Agar table mein naye columns add ho gaye to unexpected behavior ho sakta hai
+-- Agar table mein naye columns add ho gaye to unexpected behavior ho sakta hai.
 
 ----------------------------------------------------------------------------------------------------------------
 

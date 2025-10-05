@@ -2,9 +2,9 @@
 
 -- -- Ek CTE jo apne aap ko reference karta hai (cte_name ke andar phir se cte_name use hota hai).
 
--- -- Yeh ek loop ki tarah kaam karta hai: ek base query (anchor member) → uske results se agla step (recursive member) → tab tak chalti hai jab tak termination condition milti hai.
+-- Yeh ek loop ki tarah kaam karta hai: ek base query (anchor member) → uske results se agla step (recursive member) → tab tak chalti hai jab tak termination condition milti hai.
 
--- -- 📘 Recursive CTE Structure
+-- 📘 Recursive CTE Structure
 -- WITH cte_name (columns...) AS
 -- (
 --     -- Anchor member (starting point)
