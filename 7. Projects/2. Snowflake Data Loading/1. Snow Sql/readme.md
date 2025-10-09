@@ -1,4 +1,3 @@
-````markdown
 # ❄️ Snowflake Data Loading using SnowSQL
 
 ## 📘 Project Overview
