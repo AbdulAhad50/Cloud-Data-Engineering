@@ -243,7 +243,7 @@ GROUP BY p.precipitation;
 
 * **Snowflake Cloud Data Warehouse**
 * **SQL (DDL, DML, DQL)**
-* **S3 External Staging**
+* **Snowsql CLI**
 * **CSV and JSON File Formats**
 * **Dimensional Modeling (Star Schema)**
 
