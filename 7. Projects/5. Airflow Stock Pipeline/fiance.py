@@ -63,5 +63,7 @@ if __name__ == "__main__":
         transformed = transform_data(df, symbol)
         all_data.append(transformed)
 
+    print(len(all_data))
+    
     final_df = pd.concat(all_data)
     final_df.to_csv(F'stock_data_{current_time}.csv',index=False)
