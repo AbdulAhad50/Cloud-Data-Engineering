@@ -49,7 +49,7 @@ create or replace stream customer_table_changes on table customer;
 
 CREATE OR REPLACE STAGE customer_ext_stage
   URL = 's3://scd-warehousing-abdulahad'
-  CREDENTIALS = (AWS_KEY_ID = 'AKIAYC6DLTQ2KZFCKFGU' AWS_SECRET_KEY = '8fWf/4a5XBE0fuwtD5yvTc3i/AMZE87FDQYjB4Jc')
+  CREDENTIALS = (AWS_KEY_ID = 'YOUR_ACCESS_KEY' AWS_SECRET_KEY = 'YOUR_SECRET_KEY')
   FILE_FORMAT = (TYPE = 'CSV' FIELD_OPTIONALLY_ENCLOSED_BY='"' SKIP_HEADER=1);
 
   
