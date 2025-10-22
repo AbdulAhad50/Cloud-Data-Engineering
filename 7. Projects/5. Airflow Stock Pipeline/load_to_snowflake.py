@@ -1,62 +1,116 @@
+import pandas as pd
+import yfinance as yf
 import snowflake.connector
 from snowflake.connector.pandas_tools import write_pandas
+import requests
+from datetime import datetime
 import os
-import pandas as pd
-from dotenv import load_dotenv
 
-# Load environment variables
-load_dotenv()
 
-def load_to_snowflake(df):
-    conn = snowflake.connector.connect(
-        user=os.getenv("SNOWFLAKE_USER"),
-        password=os.getenv("SNOWFLAKE_PASSWORD"),
-        account=os.getenv("SNOWFLAKE_ACCOUNT"),
-        warehouse=os.getenv("SNOWFLAKE_WAREHOUSE"),
-        database=os.getenv("SNOWFLAKE_DATABASE"),
-        schema=os.getenv("SNOWFLAKE_SCHEMA")
-    )
+# Snowflake credentials
+snowflake_creds = {
+    "user": "ABDULAHAD",
+    "password": "Makhan50@123456789",
+    "account": "NZBLLEJ-ZM86882",
+    "warehouse": "COMPUTE_WH",
+    "database": "SP_500_STOCK_DATA",
+    "schema": "PUBLIC",
+    "role": "ACCOUNTADMIN"
 
-    df.columns = [col.strip().upper() for col in df.columns]
+}
 
-    if 'DATE' in df.columns:
-        df = df.rename(columns={'DATE': 'TRADE_DATE'})
-
-    df['TRADE_DATE'] = pd.to_datetime(df['TRADE_DATE'], errors='coerce')
-    float_cols = ['OPEN','HIGH','LOW','CLOSE','VOLUME','CLOSE_CHANGE','CLOSE_PCT_CHANGE']
-    for col in float_cols:
-        if col in df.columns:
-            df[col] = pd.to_numeric(df[col], errors='coerce')
-
-    cs = conn.cursor()
+def load_csv_to_snowflake(filename, snowflake_creds):
+    """
+    Simplified version that copies file to current directory first
+    """
+    conn = None
+    cursor = None
     try:
-        cs.execute("""
-        CREATE TABLE IF NOT EXISTS STOCK_PRICES (
-            "TRADE_DATE" DATE,
-            "OPEN" FLOAT,
-            "HIGH" FLOAT,
-            "LOW" FLOAT,
-            "CLOSE" FLOAT,
-            "VOLUME" FLOAT,
-            "SYMBOL" STRING,
-            "CLOSE_CHANGE" FLOAT,
-            "CLOSE_PCT_CHANGE" FLOAT
-        )
+        # Copy file to current directory to avoid path issues
+        import shutil
+        current_dir_file = os.path.basename(filename)
+        if not os.path.exists(current_dir_file):
+            shutil.copy2(filename, current_dir_file)
+            print(f"Copied {filename} to {current_dir_file}")
+        
+        conn = snowflake.connector.connect(**{
+            k: v for k, v in snowflake_creds.items() 
+            if v is not None
+        })
+        cursor = conn.cursor()
+
+        print("Connected to Snowflake.")
+
+        cursor.execute("USE DATABASE SP_500_STOCK_DATA;")
+        print("USE DATABASE SP_500_STOCK_DATA")
+
+        # cursor.execute("DROP TABLE SP500_PRICES;")
+        print("DROP TABLE SP500_PRICES;")
+
+        # cursor.execute("CREATE SCHEMA IF NOT EXISTS staging;")
+        # print("CREATE SCHEMA IF NOT EXISTS staging;")
+
+        # cursor.execute("USE SCHEMA staging;")
+        # print("USE SCHEMA staging;")
+
+        # Create table
+        cursor.execute("""
+        CREATE OR REPLACE TABLE SP500_PRICES (
+            DATE DATE,
+            OPEN FLOAT,
+            HIGH FLOAT,
+            LOW FLOAT,
+            CLOSE FLOAT,
+            VOLUME FLOAT,
+            SYMBOL STRING,
+            CLOSE_CHANGE FLOAT,
+            CLOSE_PCT_CHANGE FLOAT
+        );
         """)
+        print("Table SP500_PRICES is ready.")
+    
 
-        success, nchunks, nrows, _ = write_pandas(conn, df, "STOCK_PRICES")
+        # Create temporary stage
+        cursor.execute("CREATE OR REPLACE STAGE my_stage;")
+        print("Temporary stage created.")
 
-        if success:
-            print(f"Data loaded successfully! {nrows} rows inserted.")
-        else:
-            print("write_pandas returned failure.")
+        # Use simple filename in current directory
+        put_cmd = f"PUT 'file:///C:/Users/Administrator/Desktop/Cloud Data Engineering/7. Projects/5. Airflow Stock Pipeline/stock_data_20251021012451.csv' @my_stage AUTO_COMPRESS=TRUE;"
+        print(f"Executing: {put_cmd}")
+        cursor.execute(put_cmd)
+        print(f"Uploaded {current_dir_file} to stage.")
+
+        # Copy data
+        copy_cmd = f"""
+        COPY INTO SP500_PRICES
+        FROM @my_stage/{current_dir_file}.gz
+        FILE_FORMAT = (TYPE = 'CSV' FIELD_OPTIONALLY_ENCLOSED_BY='"' SKIP_HEADER = 1)
+        ON_ERROR = 'CONTINUE';
+        """
+
+        cursor.execute(copy_cmd)
+        print("Data copied into SP500_PRICES.")
+
+        # Verify
+        cursor.execute("SELECT COUNT(*) FROM SP500_PRICES;")
+        result = cursor.fetchone()
+
+        print(f"Total rows loaded: {result[0]}")
+
     except Exception as e:
         print(f"Snowflake load failed: {e}")
+        import traceback
+        print(f"Detailed error: {traceback.format_exc()}")
+
     finally:
-        cs.close()
-        conn.close()
+        if cursor:
+            cursor.close()
+        if conn:
+            conn.close()
+        print("Connection closed.")
 
+if __name__ == "__main__":
+    load_csv_to_snowflake('./stock_data_20251021012451.csv',snowflake_creds)
 
-# Load CSV and run the loader
-df = pd.read_csv('./stock_data_20251021012451.csv', low_memory=False)
-load_to_snowflake(df)
+    # Transform, save & upload
+    
