@@ -1,0 +1,63 @@
+-- Download AWS CLI and give it your credentials 
+to connect to AWS from local machine so we can send data --
+
+Make an EC2 instance 
+preferable t2-micro 16GB
+Attach Security Group with Access from anywhere by your IP 
+
+Make an S3 Bucket
+
+-- Connect to ec2 
+ssh -i "airflow_ec2_key.pem" ec2-user@ec2-3-235-226-170.compute-1.amazonaws.com
+
+-- Install Kafka
+wget https://downloads.apache.org/kafka/3.9.1/kafka_2.13-3.9.1.tgz
+tar -xvf kafka_2.13-3.9.1.tgz
+ 
+-- Install Java 
+sudo yum install java-25-amazon-corretto-devel -y
+
+-- Check Version
+java -version
+
+cd kafka_2.13-3.9.1
+
+-- Start Zoo-keeper:
+bin/zookeeper-server-start.sh config/zookeeper.properties
+
+-- Start Kafka server
+
+Make a new terminal connect to SSH
+
+export KAFKA_HEAP_OPTS="-Xmx256M -Xms128M" # allocating some memory for kafka server 
+cd kafka_2.13-3.9.1
+bin/kafka-server-start.sh config/server.properties
+
+-- Editing some settings to allow access from local machine
+sudo nano config/server.properties
+# Remove '#' from #advertised.listeners=PLAINTEXT://your-public-ip:9092
+# Also change the 'your-public-ip' to your ip 
+
+
+-- Create topic
+bin/kafka-topics.sh --create --topic demo_testing2 --bootstrap-server 3.235.226.170:9092 --replication-factor 1 --partitions 1
+
+-- Start Producer
+bin/kafka-console-producer.sh --topic demo_testing2 --bootstrap-server 3.235.226.170:9092 
+
+-- Start Consumer
+bin/kafka-console-consumer.sh --topic demo_testing2 --bootstrap-server 3.235.226.170:9092
+
+
+Once the data gets to s3 
+Make a Glue crawler on the whole s3 
+Attach an IAM Role with permissions
+
+Run the crawler
+it will create a table in Athena
+We can query results from Athena
+
+Finally start the producer and consumer so we can
+generate real time data and run count query in Athena 
+table each sec no of rows would be increasing showing 
+the proof of real time data orchestration with Kafka
