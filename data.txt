@@ -687,6 +687,99 @@ font-family: "Bricolage Grotesque", sans-serif;
 
 /* Testinomials */
 /*  */
+/* FAQ Section */
+.faq-title-box {
+    padding: 6px 18px;
+    background: #111;
+    border-radius: 25px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #333;
+}
+
+.circle {
+    width: 10px;
+    height: 10px;
+    background: #5f3df5;
+    border-radius: 50%;
+}
+
+.main-title {
+    font-size: 70px;
+    font-weight: 700;
+    line-height: 1;
+    margin-top: 40px;
+}
+
+.sub-text {
+    font-size: 18px;
+    width: 70%;
+    margin-top: 25px;
+}
+
+.input-box {
+    width: 70%;
+    margin-top: 40px;
+}
+
+.email-input {
+    width: 100%;
+    padding: 15px 20px;
+    border-radius: 40px;
+    border: none;
+    outline: none;
+}
+
+.subscribe-btn {
+    margin-left: -140px;
+    padding: 12px 35px;
+    border-radius: 40px;
+    border: none;
+    background: linear-gradient(to right,#8a77f7,#4a2ecf);
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.subscribe-btn:hover {
+    opacity: 0.85;
+}
+
+.faq-item {
+    border-bottom: 1px solid #333;
+    padding: 18px 0;
+}
+
+.faq-question-text {
+    font-size: 20px;
+}
+
+.toggle-icon {
+    font-size: 28px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.accordion-button {
+    background: none !important;
+    color: #fff;
+    box-shadow: none !important;
+    padding: 0;
+}
+
+.accordion-button::after {
+    display: none;
+}
+
+.accordion-button.collapsed .toggle-icon {
+    transform: rotate(0deg);
+}
+
+.accordion-button:not(.collapsed) .toggle-icon {
+    transform: rotate(45deg);
+}
 
   </style>
 </head>
@@ -1156,6 +1249,105 @@ font-family: "Bricolage Grotesque", sans-serif;
 </section>
 
 
+<!-- FAQ Section -->
+<section class="container py-5">
+    <div class="row">
+
+        <!-- LEFT SIDE -->
+        <div class="col-md-6">
+            <div class="faq-title-box">
+                <div class="circle"></div>
+                <span>FAQ's</span>
+            </div>
+
+            <h1 class="main-title">How We Can Help<br>You?</h1>
+
+            <p class="sub-text">
+                Follow our newsletter. We will regularly update our latest project and Availability.
+            </p>
+
+            <div class="input-box position-relative">
+                <input type="email" class="email-input" placeholder="sample@mail.com">
+                <button class="subscribe-btn position-absolute top-50 translate-middle-y end-0">
+                    Subscribe
+                </button>
+            </div>
+        </div>
+
+        <!-- RIGHT SIDE ACCORDION -->
+        <div class="col-md-6 mt-5">
+            <div class="accordion" id="faqAccordion">
+
+                <!-- FAQ 1 -->
+                <div class="faq-item">
+                    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq1">
+                        <span class="faq-question-text flex-grow-1">What services does Mas Design offer?</span>
+                        <span class="toggle-icon">+</span>
+                    </button>
+                    <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="text-white mt-2">
+                            We offer branding, website design, UI/UX design, social media management, and digital marketing.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item">
+                    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq2">
+                        <span class="faq-question-text flex-grow-1">How long does it take to build a website?</span>
+                        <span class="toggle-icon">+</span>
+                    </button>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="text-white mt-2">
+                            Website delivery usually takes 1–4 weeks depending on the project requirements.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item">
+                    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq3">
+                        <span class="faq-question-text flex-grow-1">Do you offer monthly social media management?</span>
+                        <span class="toggle-icon">+</span>
+                    </button>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="text-white mt-2">
+                            Yes, we manage social media content, posting schedules, ad campaigns and analytics.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq-item">
+                    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq4">
+                        <span class="faq-question-text flex-grow-1">Can you help my business get more leads?</span>
+                        <span class="toggle-icon">+</span>
+                    </button>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="text-white mt-2">
+                            Absolutely! We specialize in lead generation through SEO, paid ads, and targeted funnels.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="faq-item">
+                    <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq5">
+                        <span class="faq-question-text flex-grow-1">Do you provide support after project delivery?</span>
+                        <span class="toggle-icon">+</span>
+                    </button>
+                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="text-white mt-2">
+                            Yes, we offer maintenance, updates, and ongoing support for all projects.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
 
 
 <!-- WhatsApp Floating Icon -->
