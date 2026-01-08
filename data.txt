@@ -644,6 +644,49 @@ font-family: "Bricolage Grotesque", sans-serif;
   .features-container { grid-template-columns: 1fr; }
 }
 
+/* Testinomials */
+
+.google-left-box {
+  width: 280px;
+}
+
+.google-stars {
+  font-size: 22px;
+  color: gold;
+}
+
+.google-logo-box img {
+  width: 65px;
+  height: 65px;
+  border-radius: 10px;
+}
+
+.testimonial-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 25px;
+  width: 350px;
+  min-height: 280px;
+  color: #000;
+  margin: 10px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.review-stars {
+  color: gold;
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1);
+}
+
+
+/* Testinomials */
+/*  */
 
   </style>
 </head>
@@ -1021,6 +1064,97 @@ font-family: "Bricolage Grotesque", sans-serif;
             </div>
         </div>
 </section>
+
+
+
+<!-- Testimonials Section -->
+<section class="container py-5">
+  <p class="text-white mb-1" style="font-size:18px;">🔘 Testimonials</p>
+  <h1 class="section-title text-white">What our customers say...</h1>
+
+  <div class="d-flex justify-content-between align-items-start flex-wrap">
+
+    <!-- LEFT SIDE GOOGLE BOX -->
+    <div class="google-left-box mb-4">
+      <div class="google-logo-box d-flex align-items-center gap-3 mb-3">
+        <img src="https://i.postimg.cc/6QpYJjqN/logo.png" alt="logo">
+        <div>
+          <div class="google-stars">⭐⭐⭐⭐⭐</div>
+          <span>72 Google reviews</span>
+        </div>
+      </div>
+      <button class="btn btn-light px-4 py-2">Write a review</button>
+    </div>
+
+    <!-- RIGHT SIDE CAROUSEL -->
+    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" style="flex:1; min-width:300px;">
+
+      <div class="carousel-inner">
+
+        <div class="carousel-item active">
+          <div class="d-flex justify-content-between">
+            <div class="testimonial-card">
+              <h6>Hamad Tahir</h6>
+              <p style="font-size:13px;">7 months ago</p>
+              <div class="review-stars">⭐⭐⭐⭐⭐</div>
+              <p>Great service. I really like the design of the website. Appreciated. Keep it up.</p>
+            </div>
+
+            <div class="testimonial-card">
+              <h6>Arslan Ahmed</h6>
+              <p style="font-size:13px;">7 months ago</p>
+              <div class="review-stars">⭐⭐⭐⭐⭐</div>
+              <p>Great team and great work.</p>
+            </div>
+
+            <div class="testimonial-card">
+              <h6>Ismail Khan</h6>
+              <p style="font-size:13px;">8 months ago</p>
+              <div class="review-stars">⭐⭐⭐⭐⭐</div>
+              <p>Good work and very polite people.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="d-flex justify-content-between">
+            <div class="testimonial-card">
+              <h6>Customer A</h6>
+              <p style="font-size:13px;">1 month ago</p>
+              <div class="review-stars">⭐⭐⭐⭐⭐</div>
+              <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+
+            <div class="testimonial-card">
+              <h6>Customer B</h6>
+              <p style="font-size:13px;">2 months ago</p>
+              <div class="review-stars">⭐⭐⭐⭐⭐</div>
+              <p>Amazing experience!</p>
+            </div>
+
+            <div class="testimonial-card">
+              <h6>Customer C</h6>
+              <p style="font-size:13px;">4 months ago</p>
+              <div class="review-stars">⭐⭐⭐⭐⭐</div>
+              <p>Very satisfied with the service.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+
+      <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+
+    </div>
+  </div>
+</section>
+
 
 
 
