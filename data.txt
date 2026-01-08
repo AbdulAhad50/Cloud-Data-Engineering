@@ -781,6 +781,97 @@ font-family: "Bricolage Grotesque", sans-serif;
     transform: rotate(45deg);
 }
 
+
+/*  */
+.footer-container {
+  background: url('https://images.unsplash.com/photo-1519681393784-d120267933ba') center/cover no-repeat;
+  color: #fff;
+  padding: 80px 0 30px;
+}
+
+.office-cards {
+  margin-bottom: 60px;
+}
+
+.office-card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 25px;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+.office-header {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.office-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.office-card li {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.office-card i {
+  margin-right: 10px;
+}
+
+.footer-main h5 {
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.footer-main ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-main li {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.footer-main input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 8px;
+}
+
+.footer-main button {
+  width: 100%;
+  padding: 8px;
+  background: #8b5cf6;
+  color: #fff;
+  border: none;
+}
+
+.socials i {
+  width: 36px;
+  height: 36px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+
+/*  */
+
+
   </style>
 </head>
 
@@ -1349,6 +1440,95 @@ font-family: "Bricolage Grotesque", sans-serif;
     </div>
 </section>
 
+<footer class="footer-container">
+  <div class="container">
+
+    <!-- OFFICE CARDS -->
+    <div class="row justify-content-center office-cards">
+      <div class="col-lg-5 col-md-6 mb-4">
+        <div class="office-card">
+          <div class="office-header">
+            🇵🇰 <span>Karachi – HQ</span>
+          </div>
+          <ul>
+            <li><i class="fas fa-phone"></i> +92 319 2919906</li>
+            <li><i class="fas fa-phone"></i> +92 315 021 6369</li>
+            <li><i class="fas fa-envelope"></i> info@masdesigns.pk</li>
+            <li><i class="fas fa-envelope"></i> masdesignscreatives@gmail.com</li>
+            <li><i class="fas fa-location-dot"></i>
+              Office No 208 Kings Trade Center<br>
+              Near Munnawar Chowrangi<br>
+              Block 3 Gulistan-e-Johar Karachi
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-5 col-md-6 mb-4">
+        <div class="office-card">
+          <div class="office-header">
+            🇬🇧 <span>London Luton Office</span>
+          </div>
+          <ul>
+            <li><i class="fas fa-phone"></i> +44 7944 330566</li>
+            <li><i class="fas fa-envelope"></i> info@masdesigns.co</li>
+            <li><i class="fas fa-location-dot"></i>
+              149 Camford Way Luton LU3 3AN
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER CONTENT -->
+    <div class="row footer-main">
+      <div class="col-md-3">
+        <h5>Quick Links</h5>
+        <ul>
+          <li>Home</li>
+          <li>About Us</li>
+          <li>Our Portfolio</li>
+          <li>Reviews</li>
+          <li>Contact Us</li>
+          <li>Career</li>
+        </ul>
+      </div>
+
+      <div class="col-md-3">
+        <h5>Our Services</h5>
+        <ul>
+          <li>Graphic Designing</li>
+          <li>Website Development</li>
+          <li>Social Media Management</li>
+          <li>Digital Marketing</li>
+          <li>Creative & Media Services</li>
+          <li>Hosting</li>
+        </ul>
+      </div>
+
+      <div class="col-md-3">
+        <h5>Join Our Newsletter</h5>
+        <input type="email" placeholder="info@gmail.com">
+        <button>Subscribe</button>
+      </div>
+
+      <div class="col-md-3">
+        <h5>Connect With Us</h5>
+        <div class="socials">
+          <i class="fab fa-facebook-f"></i>
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-linkedin-in"></i>
+          <i class="fab fa-behance"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2019-2025 All Rights Reserved | Design & Developed by <b>MAS Designs</b>
+    </div>
+
+  </div>
+</footer>
 
 <!-- WhatsApp Floating Icon -->
 <div class="whatsapp-btn">
