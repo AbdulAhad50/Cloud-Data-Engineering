@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MAS Designs</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Font (similar to screenshot) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Slick Slider CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
+    <!-- jQuery (Must be loaded before Slick) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+        integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-js/1.3.0/sticky.min.js"
+        integrity="sha512-3z3zGiu0PabNyuTAAfznBJFpOg4owG9oQQasE5BwiiH5BBwrAjbfgIe0RCdtHJ0BQV1YF2Shgokbz2NziLnkuQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Slick Slider JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+<style>
+      /* GLOBAL */
+body {
+    overflow-x: hidden;
+}
+
+/* NAVBAR */
+.navbar-dark {
+    backdrop-filter: blur(10px);
+    background: rgba(38, 38, 38, 0.63);
+    border-radius: 50px;
+    border: 2px solid rgba(255,255,255,.4);
+    margin: 12px auto;
+    max-width: 1350px;
+}
+
+.logo-img {
+    width: clamp(120px, 18vw, 160px);
+    height: auto;
+}
+
+.nav-link {
+    color: #d8d8d8;
+    font-size: 16px;
+    padding: 6px 10px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #fff;
+}
+
+/* SHINING BUTTON */
+.nav-shining-btn {
+    position: relative;
+    border-radius: 40px;
+    background: #fff;
+    padding: 2px;
+}
+
+.nav-shining-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+        #ff0000,#ff7300,#fffb00,#48ff00,#00ffd5,#002bff,#7a00ff,#ff00c8,#ff0000);
+    background-size: 400% 400%;
+    animation: glow 6s linear infinite;
+    border-radius: inherit;
+    z-index: -1;
+}
+
+@keyframes glow {
+    to { background-position: 400% 0; }
+}
+
+.portfolio-btn {
+    background: #fff;
+    border-radius: 40px;
+    font-weight: 600;
+}
+
+/* HERO */
+.hero {
+    min-height: 100svh;
+    padding-top: 120px;
+}
+
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.hero-content {
+    text-align: center;
+}
+
+.tag-pill {
+    background: #ffffff45;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 14px;
+    display: inline-block;
+}
+
+.hero-title {
+    font-size: clamp(32px, 5vw, 66px);
+    line-height: clamp(42px, 6vw, 78px);
+    margin: 20px 0;
+}
+
+.hero-sub {
+    font-size: clamp(15px, 2.3vw, 18px);
+    max-width: 750px;
+    margin: auto;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+/* BUTTONS */
+.call-btn {
+    background: #fff;
+    border-radius: 40px;
+    padding: 10px 26px;
+}
+
+.projects-btn {
+    border: 2px solid #868686;
+    background: #ffffff45;
+    border-radius: 25px;
+    color: #fff;
+    padding: 10px 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* TRUSTED */
+.trusted-title {
+    text-align: center;
+    font-size: clamp(20px, 3vw, 28px);
+}
+
+.by-text {
+    color: #a99cff;
+}
+
+.slider-wrap {
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+.logo-slider-left,
+.logo-slider-right {
+    display: flex;
+}
+
+.logo-slider-left img,
+.logo-slider-right img {
+    height: clamp(45px, 8vw, 85px);
+    margin: 0 15px;
+    border-radius: 14px;
+}
+
+/* MOBILE */
+@media (max-width: 576px) {
+    .navbar-dark {
+        border-radius: 18px;
+        margin: 8px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top px-lg-4 py-2">
+    <div class="container-fluid align-items-center">
+
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <img src="{{ asset('/assets/Logo.png') }}" alt="Logo" class="logo-img">
+        </a>
+
+        <!-- Toggler -->
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menu -->
+        <div class="collapse navbar-collapse justify-content-center" id="navMenu">
+            <ul class="navbar-nav align-items-center">
+                <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Graphics</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Website</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Marketing</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Hosting</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Other Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+            </ul>
+
+            <!-- Portfolio Button -->
+            <div class="ms-lg-4 mt-3 mt-lg-0">
+                <div class="nav-shining-btn">
+                    <button class="btn portfolio-btn">Our Portfolio</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <main>
+
+        <!-- Hero Section -->
+        <!-- HERO SECTION -->
+        <section class="hero" style="background:url('{{ asset('assets/Hero-Section-bg-scaled.jpg') }}') center/cover no-repeat;">
+            <div class="container hero-section">
+
+        <div class="hero-content">
+            <p class="tag-pill">Leading Digital Marketing Agency in Pakistan</p>
+
+            <h1 class="hero-title">
+                Smart Design & Digital Services<br>
+                For Every Business
+            </h1>
+
+            <p class="hero-sub">
+                From websites to graphics and social media, Mas Designs builds what your brand needs.<br>
+                We help businesses in Karachi and Pakistan grow online.
+            </p>
+
+            <div class="hero-buttons">
+                <button class="btn call-btn">Call Now</button>
+                <button class="btn projects-btn"><span>See Our Projects</span></button>
+            </div>
+        </div>
+
+        <!-- TRUSTED SLIDER -->
+        <div class="hero-marque">
+            <h3 class="trusted-title">
+                Trusted <span class="by-text">By</span> Leading Businesses
+            </h3>
+
+            <div class="slider-wrap">
+                <div class="logo-slider-left">
+                    <img src="{{ asset('assets/Frazon.jpg') }}">
+                    <img src="{{ asset('assets/Frazon.jpg') }}">
+                    <img src="{{ asset('assets/Frazon.jpg') }}">
+                    <img src="{{ asset('assets/Frazon.jpg') }}">
+                </div>
+            </div>
+
+            <div class="slider-wrap" dir="rtl">
+                <div class="logo-slider-right">
+                    <img src="{{ asset('assets/Frazon.jpg') }}">
+                    <img src="{{ asset('assets/Frazon.jpg') }}">
+                    <img src="{{ asset('assets/Frazon.jpg') }}">
+                    <img src="{{ asset('assets/Frazon.jpg') }}">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+        
+
+        <!-- Testimonials Section -->
+        <section class="container py-5">
+            <div class="ourprocess-btn">
+                <span>
+                    <svg aria-hidden="true" class="e-font-icon-svg e-fas-dot-circle" viewBox="0 0 512 512"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path style="fill: #A393DD;"
+                            d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm80 248c0 44.112-35.888 80-80 80s-80-35.888-80-80 35.888-80 80-80 80 35.888 80 80z">
+                        </path>
+                    </svg>
+                </span>
+                <button style="color: #FFFFFF;">Testimonials</button>
+            </div>
+            <h2 class="heading">What our customers say...</h2>
+            <div class="d-flex justify-content-between align-items-start flex-wrap">
+
+                <!-- LEFT SIDE -->
+                <div class="google-left-box mb-4 col-md-4">
+                    <div class="google-logo-box d-flex align-items-center gap-3 mb-3">
+                        <img src="{{ asset('assets/photo.png') }}" alt="logo">
+                        <div class="mt-2">
+                            <div class="text-warning fs-5">
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-fill"></i>
+                                <i class="ri-star-half-line"></i>
+                            </div>
+                            <span>72 Google reviews</span>
+                            <button class="btn btn-light fw-bold testimonial-btn mt-2">
+                                Write a review
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT SIDE SLICK SLIDER -->
+                <div class="testimonial-slider col-md-8">
+                    <div class="testimonial-card d-flex gap-3 flex-column">
+                        <div class="d-flex align-items-center gap-2"> <img
+                                src="{{ asset('assets/testimonials-icon.png') }}" alt="photo" width="40" height="40"
+                                class="rounded-circle">
+                            <div style="line-height: 14px; margin-top: 5px;">
+                                <h6 class="m-0 fw-bold" style="font-size: 16px;">Emily White</h6>
+                                <p class="m-0" style="font-size:13px; color: #8a8a8a;">3 months ago</p>
+                            </div> <img src="{{ asset('assets/icon.svg') }}" alt="icon" width="20" height="20"
+                                class="ms-auto">
+                        </div>
+                        <div class="text-warning" style="font-size: 16px;"> <i class="ri-star-fill"></i> <i
+                                class="ri-star-fill"></i> <i class="ri-star-fill"></i> <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i> <i class="ri-verified-badge-fill"
+                                style="color: blue !important;"></i>
+                        </div>
+                        <p style="font-size: 16px;">Professional and timely delivery. Will work again.</p>
+                    </div>
+
+                    <div class="testimonial-card d-flex gap-3 flex-column">
+                        <div class="d-flex align-items-center gap-2"> <img
+                                src="{{ asset('assets/testimonials-icon.png') }}" alt="photo" width="40" height="40"
+                                class="rounded-circle">
+                            <div style="line-height: 14px; margin-top: 5px;">
+                                <h6 class="m-0 fw-bold" style="font-size: 16px;">Emily White</h6>
+                                <p class="m-0" style="font-size:13px; color: #8a8a8a;">3 months ago</p>
+                            </div> <img src="{{ asset('assets/icon.svg') }}" alt="icon" width="20" height="20"
+                                class="ms-auto">
+                        </div>
+                        <div class="text-warning" style="font-size: 16px;"> <i class="ri-star-fill"></i> <i
+                                class="ri-star-fill"></i> <i class="ri-star-fill"></i> <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i> <i class="ri-verified-badge-fill"
+                                style="color: blue !important;"></i>
+                        </div>
+                        <p style="font-size: 16px;">Professional and timely delivery. Will work again.</p>
+                    </div>
+                    <div class="testimonial-card d-flex gap-3 flex-column">
+                        <div class="d-flex align-items-center gap-2"> <img
+                                src="{{ asset('assets/testimonials-icon.png') }}" alt="photo" width="40" height="40"
+                                class="rounded-circle">
+                            <div style="line-height: 14px; margin-top: 5px;">
+                                <h6 class="m-0 fw-bold" style="font-size: 16px;">Emily White</h6>
+                                <p class="m-0" style="font-size:13px; color: #8a8a8a;">3 months ago</p>
+                            </div> <img src="{{ asset('assets/icon.svg') }}" alt="icon" width="20" height="20"
+                                class="ms-auto">
+                        </div>
+                        <div class="text-warning" style="font-size: 16px;"> <i class="ri-star-fill"></i> <i
+                                class="ri-star-fill"></i> <i class="ri-star-fill"></i> <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i> <i class="ri-verified-badge-fill"
+                                style="color: blue !important;"></i>
+                        </div>
+                        <p style="font-size: 16px;">Professional and timely delivery. Will work again.</p>
+                    </div>
+                    <div class="testimonial-card d-flex gap-3 flex-column">
+                        <div class="d-flex align-items-center gap-2"> <img
+                                src="{{ asset('assets/testimonials-icon.png') }}" alt="photo" width="40" height="40"
+                                class="rounded-circle">
+                            <div style="line-height: 14px; margin-top: 5px;">
+                                <h6 class="m-0 fw-bold" style="font-size: 16px;">Emily White</h6>
+                                <p class="m-0" style="font-size:13px; color: #8a8a8a;">3 months ago</p>
+                            </div> <img src="{{ asset('assets/icon.svg') }}" alt="icon" width="20" height="20"
+                                class="ms-auto">
+                        </div>
+                        <div class="text-warning" style="font-size: 16px;"> <i class="ri-star-fill"></i> <i
+                                class="ri-star-fill"></i> <i class="ri-star-fill"></i> <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i> <i class="ri-verified-badge-fill"
+                                style="color: blue !important;"></i>
+                        </div>
+                        <p style="font-size: 16px;">Professional and timely delivery. Will work again.</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+
+        
+        <footer class="relative">
+
+            <div class="position-relative">
+
+                <!-- VIDEO BACKGROUND -->
+                <video autoplay muted loop class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover" style="z-index: 0; filter: brightness(0.5);">
+                    <source src="{{ asset('assets/background-video.mp4') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <!-- OFFICE CARDS -->
+                <div class="container">
+                    <div class="row justify-content-evenly office-cards">
+                        <div class="col-lg-5 col-md-6 mb-4">
+                            <div class="office-card">
+                                <div class="office-header">
+
+                                    <img src="{{ asset("assets/pakistan.png") }}" alt=""
+                                        style="width: 61px; height: 40px;"><span>Karachi – HQ</span>
+                                </div>
+                                <ul class="d-flex gap-3">
+                                    <li><i class="fas fa-phone"></i> +92 319 2919906</li>
+                                    <li><i class="fas fa-phone"></i> +92 315 021 6369</li>
+                                </ul>
+                                <ul>
+                                    <li><i class="fas fa-envelope"></i> info@masdesigns.pk</li>
+                                    <li><i class="fas fa-envelope"></i> masdesignscreatives@gmail.com</li>
+                                </ul>
+                                <ul class="d-flex gap-3">
+                                    <li>
+                                        <i class="fas fa-location-dot"></i>
+                                        Office No 208 Kings Trade Center<br>
+                                        Near Munnawar Chowrangi<br>
+                                        Block 3 Gulistan-e-Johar Karachi
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-5 col-md-6 mb-4">
+                            <div class="office-card">
+                                <div class="office-header">
+                                    <img src="{{ asset("assets/pakistan.png") }}" alt=""
+                                        style="width: 61px; height: 40px;"><span>Karachi – HQ</span>
+                                </div>
+                                <ul class="d-flex gap-1.5">
+                                    <li><i class="fas fa-phone"></i> +92 319 2919906</li>
+                                    <li><i class="fas fa-phone"></i> +92 315 021 6369</li>
+                                </ul>
+                                <ul>
+                                    <li><i class="fas fa-envelope"></i> info@masdesigns.pk</li>
+                                    <li><i class="fas fa-envelope"></i> masdesignscreatives@gmail.com</li>
+                                </ul>
+                                <ul>
+                                    <li>
+                                        <i class="fas fa-location-dot"></i>
+                                        Office No 208 Kings Trade Center<br>
+                                        Near Munnawar Chowrangi<br>
+                                        Block 3 Gulistan-e-Johar Karachi
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FOOTER CONTENT -->
+                    <div class="row footer-main justify-content-center">
+                        <div class="col-md-3">
+
+                            <h4 class="fw-bold mb-2">Quick Links</h4>
+                            <ul class="d-flex flex-column gap-2">
+                                <li style="font-size: 18px;">Home</li>
+                                <li style="font-size: 18px;">About Us</li>
+                                <li style="font-size: 18px;">Our Portfolio</li>
+                                <li style="font-size: 18px;">Reviews</li>
+                                <li style="font-size: 18px;">Contact Us</li>
+                                <li style="font-size: 18px;">Career</li>
+                            </ul>
+                        </div>
+
+                        <div class="col-md-3">
+                            <h4 class="fw-bold mb-2">Our Services</h4>
+                            <ul class="d-flex flex-column gap-2">
+                                <li style="font-size: 18px;">Graphic Designing</li>
+                                <li style="font-size: 18px;">Website Development</li>
+                                <li style="font-size: 18px;">Social Media Management</li>
+                                <li style="font-size: 18px;">Digital Marketing</li>
+                                <li style="font-size: 18px;">Creative & Media Services</li>
+                                <li style="font-size: 18px;">Hosting</li>
+                            </ul>
+                        </div>
+
+                        <div class="col-md-4 ms-4">
+
+                            <h4 class="fw-bold mb-2">Join our newsletter</h4>
+                            <div class="mt-2 position-relative">
+                                <input type="email" style="border-radius: 10px; width: 60%;" class="email-input" placeholder="sample@mail.com">
+                                <button style="border-radius: 10px;">
+                                    Subscribe
+                                </button>
+                            </div>
+
+
+                            <h4 class="fw-bold mt-2">Connect With Us</h4>
+                            <div class="socials">
+                                <i class="fab fa-facebook-f"></i>
+                                <i class="fab fa-instagram"></i>
+                                <i class="fab fa-linkedin-in"></i>
+                                <i class="fab fa-behance"></i>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 d-flex align-items-center justify-content-center flex-column">
+                            <div class="d-flex gap-1 align-items-center">
+                                <p style="margin: 0; padding: 0;">© 2019 - 2025 All Rights Reserved | Design & Developed By</p>
+                                <img src="{{ asset('assets/logo.png') }}" alt="" style="width:119px; height: 40px;">
+                            </div>
+
+                            <p>Privacy Policy | Terms & Condition</p>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div style="width: 100%; height: 280px;">
+                <img src="{{ asset('assets/footer-logo.jpg') }}" alt="" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+
+
+
+
+        </footer>
+
+        <!-- WhatsApp Floating Icon -->
+        <div class="whatsapp-btn">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+        </div>
+
+
+
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.logo-slider-left').slick({
+                slidesToShow: 7,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 500,
+                speed: 600,
+                infinite: true,
+                arrows: false,
+                dots: false,
+                pauseOnHover: true,
+                variableWidth: false
+            });
+
+            $('.logo-slider-right').slick({
+                slidesToShow: 7,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 500,
+                speed: 600,
+                infinite: true,
+                arrows: false,
+                dots: false,
+                pauseOnHover: true,
+                variableWidth: true,
+                rtl: true
+            });
+            $('.testimonial-slider').slick({
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                arrows: true,
+                prevArrow: '<button type="button" class="slick-prev slick-arrow"><i class="fas fa-chevron-left"></i></button>',
+                nextArrow: '<button type="button" class="slick-next slick-arrow"><i class="fas fa-chevron-right"></i></button>',
+                responsive: [{
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1,
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
+        });
+
+        var sticky = new Sticky('.selector');
+    </script>
+</body>
+
+</html>
