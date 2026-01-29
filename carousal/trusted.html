@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feature Slider</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Slick CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
+
+</head>
+
+
+
+<style>
+/* ===== Trusted Section ===== */
+.trusted-wrapper{
+  background: linear-gradient(180deg, #050505, #0a0a0a, #050505);
+  position: relative;
+  overflow: hidden;
+}
+
+.trusted-wrapper::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(212,175,55,0.12), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(212,175,55,0.10), transparent 45%);
+  pointer-events:none;
+}
+
+.trusted-heading{
+  font-size: 38px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing:1px;
+}
+
+.trusted-heading span{
+  background: linear-gradient(90deg, #d4af37, #fff1a8, #d4af37);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.trusted-desc{
+  color:#aaa;
+  max-width:600px;
+  margin: 12px auto 0;
+  font-size:15px;
+}
+
+/* ===== Partner Cards ===== */
+.partner-box{
+  background: rgba(255,255,255,0.04);
+  border-radius: 18px;
+  padding: 28px 20px;
+  border: 1px solid rgba(212,175,55,0.18);
+  backdrop-filter: blur(8px);
+  box-shadow: 
+    0 0 20px rgba(212,175,55,0.08),
+    inset 0 0 15px rgba(255,255,255,0.03);
+  transition: all .45s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.partner-box::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(120deg,
+    transparent,
+    rgba(212,175,55,0.25),
+    transparent);
+  transform: translateX(-120%);
+  transition: .7s;
+}
+
+.partner-box:hover::before{
+  transform: translateX(120%);
+}
+
+.partner-box:hover{
+  transform: translateY(-10px) scale(1.05);
+  box-shadow:
+    0 0 45px rgba(212,175,55,0.35),
+    inset 0 0 20px rgba(255,255,255,0.05);
+}
+
+/* ===== Logos ===== */
+.partner-box img{
+  max-height: 55px;
+  max-width: 100%;
+  filter: brightness(0) invert(1);
+  transition: .4s ease;
+}
+
+.partner-box:hover img{
+  filter: brightness(1);
+}
+
+/* ===== Responsive ===== */
+@media(max-width:768px){
+  .trusted-heading{font-size:28px}
+}
+
+</style>
+<body>
+
+<section class="trusted-wrapper py-5">
+  <div class="container text-center">
+    
+    <h2 class="trusted-heading">
+      Trusted by <span>Our Premium Partners</span>
+    </h2>
+    <p class="trusted-desc">
+      We collaborate with industry-leading brands and innovative companies worldwide.
+    </p>
+
+    <div class="row justify-content-center g-4 mt-4">
+
+      <!-- Partner 1 -->
+      <div class="col-6 col-md-3">
+        <div class="partner-box">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png">
+        </div>
+      </div>
+
+      <!-- Partner 2 -->
+      <div class="col-6 col-md-3">
+        <div class="partner-box">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg">
+        </div>
+      </div>
+
+      <!-- Partner 3 -->
+      <div class="col-6 col-md-3">
+        <div class="partner-box">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg">
+        </div>
+      </div>
+
+      <!-- Partner 4 -->
+      <div class="col-6 col-md-3">
+        <div class="partner-box">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg">
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+
+</body>
+</html>
